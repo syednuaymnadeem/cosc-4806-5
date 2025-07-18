@@ -7,10 +7,13 @@ class Reports extends Controller {
         SESSION['username'] !== 'admin') {
         header('Location: /home');
         exit;
-    }
-
-      
+    }     
 
   }
+  public function index() {}
+
+  
+
+ 
 }
 ?>
