@@ -12,6 +12,12 @@ class Reports extends Controller {
   }
   public function index() {
     $r = $this->model('Report');
+
+    $data = [
+        'allReminders' => $r->getAllReminders(),
+        'topUser'      => $r->getTopReminderUser(),
+        'loginCounts'  => $r->getLoginCounts(),
+    ];
   }
 
   
