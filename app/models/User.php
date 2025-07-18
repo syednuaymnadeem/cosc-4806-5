@@ -9,6 +9,7 @@ class User {
 
     public function __construct() { }
 
+    
 
     public function authenticate($username, $password) {
         $username = strtolower($username);
@@ -20,7 +21,7 @@ class User {
 
         if ($rows && password_verify($password, $rows['password'])) {
 
-
+            
             $ins = $db->prepare("INSERT INTO logins (user_id) VALUES (:uid)");
             $ins->bindValue(':uid', $rows['userid']);
             $ins->execute();
@@ -44,5 +45,5 @@ class User {
         }
     }
 
-    // … exists(), create() …
+    
 }
