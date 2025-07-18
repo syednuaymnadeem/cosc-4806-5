@@ -10,7 +10,9 @@ class Reports extends Controller {
     }     
 
   }
-  public function index() {}
+  public function index() {
+    $r = $this->model('Report');
+  }
 
   
 
