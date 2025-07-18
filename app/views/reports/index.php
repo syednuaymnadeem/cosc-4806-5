@@ -8,3 +8,5 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
     <li class="breadcrumb-item active" aria-current="page">Reports</li>
   </ol>
 </nav>
+<h1>Admin Reports</h1>
+<h2>All Reminders</h2>
