@@ -1,4 +1,5 @@
 <?php
+
 $ctrl = ucwords($_SESSION['controller'] ?? 'Home');
 $act  = ucwords($_SESSION['method']     ?? 'Index');
 ?>
@@ -8,13 +9,12 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
     <li class="breadcrumb-item active" aria-current="page">Reports</li>
   </ol>
 </nav>
-<h1>Admin Reports</h1>
-<h2>All Reminders</h2>
 
+<h1>Admin Reports</h1>
+
+<h2>All Reminders</h2>
 <table class="table table-striped">
-  <thead>
-    <tr><th>#</th><th>User</th><th>Reminder</th><th>Created</th></tr>
-  </thead>
+  <thead><tr><th>#</th><th>User</th><th>Reminder</th><th>Created</th></tr></thead>
   <tbody>
   <?php foreach($allReminders as $row): ?>
     <tr>
@@ -26,6 +26,7 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
   <?php endforeach; ?>
   </tbody>
 </table>
+
 <hr>
 
 <h2>User with Most Reminders</h2>
@@ -49,10 +50,9 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
   </tbody>
 </table>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-->
-<canvas id="loginChart" height="100"></canvas>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="loginChart" height="100"></canvas>
 <script>
   const ctx = document.getElementById('loginChart').getContext('2d');
   new Chart(ctx, {
@@ -67,4 +67,3 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
     }
   });
 </script>
-
