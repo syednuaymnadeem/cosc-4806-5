@@ -18,10 +18,8 @@ class Reports extends Controller {
         'topUser'      => $r->getTopReminderUser(),
         'loginCounts'  => $r->getLoginCounts(),
     ];
-  }
 
-  
-
- 
+    $this->view('reports/index', $data);
+  } 
 }
 ?>
