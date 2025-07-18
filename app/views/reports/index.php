@@ -26,3 +26,10 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
   <?php endforeach; ?>
   </tbody>
 </table>
+<hr>
+
+<h2>User with Most Reminders</h2>
+<p>
+  <strong><?= htmlspecialchars($topUser['username']) ?></strong>
+   (<?= $topUser['cnt'] ?> reminders)
+</p>
