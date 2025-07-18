@@ -33,3 +33,18 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
   <strong><?= htmlspecialchars($topUser['username']) ?></strong>
    (<?= $topUser['cnt'] ?> reminders)
 </p>
+
+<hr>
+
+<h2>Login Counts</h2>
+<table class="table table-bordered">
+  <thead><tr><th>User</th><th>Logins</th></tr></thead>
+  <tbody>
+  <?php foreach($loginCounts as $row): ?>
+    <tr>
+      <td><?= htmlspecialchars($row['username']) ?></td>
+      <td><?= (int)$row['login_count'] ?></td>
+    </tr>
+  <?php endforeach; ?>
+  </tbody>
+</table>
