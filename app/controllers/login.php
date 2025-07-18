@@ -9,15 +9,15 @@ class Login extends Controller {
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
 
-   
+ 
         $user = $this->model('User')->authenticate($username, $password);
 
         if ($user) {
-       
+
             $_SESSION['user_id']  = $user['id'];
             $_SESSION['username'] = $user['username'];
 
-       
+
             if ($user['username'] === 'admin') {
                 header('Location: /reports');
             } else {
@@ -26,7 +26,7 @@ class Login extends Controller {
             exit;
         }
 
-   
+        
         $_SESSION['flash_error'] = 'Invalid credentials.';
         header('Location: /login');
         exit;
