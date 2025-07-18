@@ -28,5 +28,15 @@ class Report {
         ";
         return $this->db->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getLoginCounts() {
+        $sql = "
+          SELECT u.username, COUNT(l.id) AS login_count
+          FROM logins l
+          JOIN users u ON l.user_id = u.id
+          GROUP BY u.username
+        ";
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
     
 }
