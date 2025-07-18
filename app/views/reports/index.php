@@ -10,3 +10,19 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
 </nav>
 <h1>Admin Reports</h1>
 <h2>All Reminders</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr><th>#</th><th>User</th><th>Reminder</th><th>Created</th></tr>
+  </thead>
+  <tbody>
+  <?php foreach($allReminders as $row): ?>
+    <tr>
+      <td><?= htmlspecialchars($row['id']) ?></td>
+      <td><?= htmlspecialchars($row['username']) ?></td>
+      <td><?= htmlspecialchars($row['reminder']) ?></td>
+      <td><?= htmlspecialchars($row['created_at']) ?></td>
+    </tr>
+  <?php endforeach; ?>
+  </tbody>
+</table>
