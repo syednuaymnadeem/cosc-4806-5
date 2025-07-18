@@ -48,3 +48,23 @@ $act  = ucwords($_SESSION['method']     ?? 'Index');
   <?php endforeach; ?>
   </tbody>
 </table>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+->
+<canvas id="loginChart" height="100"></canvas>
+
+<script>
+  const ctx = document.getElementById('loginChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: <?= json_encode(array_column($loginCounts, 'username')) ?>,
+      datasets: [{
+        label: 'Total Logins',
+        data: <?= json_encode(array_column($loginCounts, 'login_count')) ?>,
+        tension: 0.1
+      }]
+    }
+  });
+</script>
+
